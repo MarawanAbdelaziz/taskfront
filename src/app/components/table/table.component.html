@@ -1,1 +1,36 @@
-<p>table works!</p>
+<div class="bg-white rounded-sm mx-2.5 px-3 pt-3">
+  <div
+    class="grid grid-cols-8 bg-background-gray rounded-lg items-center font-neo-sans-arabic text-[13px] font-normal p-3 mb-2 text-gray-dark"
+  >
+    <h4 class="col-span-2">العميل</h4>
+    <h4>تاريخ التعيين</h4>
+    <h4>تاريخ إلغاء التعيين</h4>
+    <h4>المسؤول عن التعيين</h4>
+    <h4>الدقائق المحلية</h4>
+    <h4>الدقائق الدولية</h4>
+    <h4>المبلغ</h4>
+  </div>
+  <div
+    class="h-[300px] w-full overflow-y-scroll custom-scrollbar"
+  >
+  <div
+  *ngFor="let item of data"
+  class="grid grid-cols-8 border border-border2 rounded-lg items-center p-3 mb-2 text-dark text-sm font-normal"
+>
+  <h4 title="{{ item.company }}" class="col-span-2 font-neo-sans-arabic">
+    {{ item.company || '-'}}
+  </h4>
+  <h4 class="font-poppins">{{ item.date1 || '-'}}</h4>
+  <h4 class="font-poppins">{{ item.date2 || '-'}}</h4>
+  <h4 class="font-neo-sans-arabic">{{ item.name || '-' }}</h4>
+  <h4 class="font-poppins">{{ item.localMin || '-'}}</h4>
+  <h4 class="font-poppins">{{ item.globalMin || '-'}}</h4>
+  <h4 class="font-poppins">
+    {{ item.amount || '-'}} <span class="font-neo-sans-arabic mr-0.5">ج.م</span>
+  </h4>
+</div>
+
+  </div>
+
+  <div class="mt-3">s</div>
+</div>

@@ -14,6 +14,9 @@
   --color-light: #E8E8E8;
   --color-background-light: #F8F8F8;
   --color-background-gray: #F4F5F7;
+  --color-border1: #ECF0F5;
+  --color-border2: #ECF0F5;
+  --color-line: #DFDFDF;
 }
 
 
@@ -22,28 +25,27 @@
 @theme {
   --font-neo-sans-arabic: "NeoSansArabic", sans-serif;
   --font-poppins: "Poppins", sans-serif;
-
 }
 
 /* ~~~~~~~~~~~~~~~~~~~ Neo Sans Arabic ~~~~~~~~~~~~~~~~~~~ */
 
 @font-face {
   font-family: "NeoSansArabic";
-  src: url("/src/assets/fonts/NeoSansArabic/NeoSansArabicLight.ttf") format("truetype");
+  src: url("/public/assets/fonts/NeoSansArabic/NeoSansArabicLight.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: "NeoSansArabic";
-  src: url("/src/assets/fonts/NeoSansArabic/NeoSansArabicRegular.ttf") format("truetype");
+  src: url("/public/assets/fonts/NeoSansArabic/NeoSansArabicRegular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "NeoSansArabic";
-  src: url("/src/assets/fonts/NeoSansArabic/NeoSansArabicMedium.ttf") format("truetype");
+  src: url("/public/assets/fonts/NeoSansArabic/NeoSansArabicMedium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
 }
@@ -53,21 +55,28 @@
 
 @font-face {
   font-family: "Poppins";
-  src: url("/src/assets/fonts/Poppins/Poppins-Light.ttf") format("truetype");
+  src: url("/public/assets/fonts/Poppins/Poppins-Light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Poppins";
-  src: url("/src/assets/fonts/Poppins/Poppins-Regular.ttf") format("truetype");
+  src: url("/public/assets/fonts/Poppins/Poppins-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Poppins";
-  src: url("/src/assets/fonts/Poppins/Poppins-Medium.ttf") format("truetype");
+  src: url("/public/assets/fonts/Poppins/Poppins-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
+}
+
+
+.custom-scrollbar::-webkit-scrollbar {
+  opacity: 0;
+  width: 0px;
+  height: 0px;
 }

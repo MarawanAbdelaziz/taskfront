@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   templateUrl: './navbar.component.html',
 })
 export class NavbarComponent {
-  closeIcon: string = '../../../public/images/image11.png';
+  closeIconB: string = 'assets/icons/closeBlack.svg';
+  closeIconR: string = 'assets/icons/closeRed.svg';
+  icon1: string = 'assets/icons/icon1.svg';
 }

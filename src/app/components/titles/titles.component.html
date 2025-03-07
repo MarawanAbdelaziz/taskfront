@@ -1,0 +1,18 @@
+<div class="flex flex-col justify-center items-center font-normal text-sm">
+  <h3 class="font-neo-sans-arabic mb-2 text-gray-dark">
+    {{ title }}
+  </h3>
+  <div class="flex justify-center items-center">
+    @if (imageSrc) {
+    <img class="w-5 h-5 ml-2 rounded-full" [src]="imageSrc" alt="Icon" />
+    } @if (number) {
+    <h3 title="{{ des }}" class="font-poppins text-dark truncate">{{ des }}</h3>
+    } @else {
+    <h3 title="{{ des }}" class="font-neo-sans-arabic text-dark truncate">
+      {{ des }}
+    </h3>
+    } @if (price){
+    <p class="mr-1 font-neo-sans-arabic">ج.م</p>
+    }
+  </div>
+</div>

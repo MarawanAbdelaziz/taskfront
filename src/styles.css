@@ -14,7 +14,7 @@
   --color-light: #E8E8E8;
   --color-background-light: #F8F8F8;
   --color-background-gray: #F4F5F7;
-  --color-border1: #ECF0F5;
+  --color-border1: #E4E4E4;
   --color-border2: #ECF0F5;
   --color-line: #DFDFDF;
 }
@@ -31,21 +31,21 @@
 
 @font-face {
   font-family: "NeoSansArabic";
-  src: url("/public/assets/fonts/NeoSansArabic/NeoSansArabicLight.ttf") format("truetype");
+  src: url("../public/assets/fonts/NeoSansArabic/NeoSansArabicLight.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: "NeoSansArabic";
-  src: url("/public/assets/fonts/NeoSansArabic/NeoSansArabicRegular.ttf") format("truetype");
+  src: url("../public/assets/fonts/NeoSansArabic/NeoSansArabicRegular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "NeoSansArabic";
-  src: url("/public/assets/fonts/NeoSansArabic/NeoSansArabicMedium.ttf") format("truetype");
+  src: url("../public/assets/fonts/NeoSansArabic/NeoSansArabicMedium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
 }
@@ -55,21 +55,21 @@
 
 @font-face {
   font-family: "Poppins";
-  src: url("/public/assets/fonts/Poppins/Poppins-Light.ttf") format("truetype");
+  src: url("../public/assets/fonts/Poppins/Poppins-Light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Poppins";
-  src: url("/public/assets/fonts/Poppins/Poppins-Regular.ttf") format("truetype");
+  src: url("../public/assets/fonts/Poppins/Poppins-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Poppins";
-  src: url("/public/assets/fonts/Poppins/Poppins-Medium.ttf") format("truetype");
+  src: url("../public/assets/fonts/Poppins/Poppins-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
 }

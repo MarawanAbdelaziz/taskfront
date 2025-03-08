@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { TitlesComponent } from "../titles/titles.component";
+import { TitlesComponent } from '../titles/titles.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-header',
@@ -11,4 +12,13 @@ export class HeaderComponent {
   dotsIconB: string = 'assets/icons/dotsBlue.svg';
   saudiArabia: string = 'assets/icons/saudi-arabia.svg';
   image11: string = 'assets/images/image11.png';
+  editIcon: string = 'assets/icons/edit.svg';
+  cancelIcon: string = 'assets/icons/cancel.svg';
+
+
+  isMenuOpen = false;
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
 }

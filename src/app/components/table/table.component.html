@@ -1,36 +1,98 @@
-<div class="bg-white rounded-sm mx-2.5 px-3 pt-3">
+<div class="bg-white rounded-sm border border-border2 mx-2.5 px-3 pt-3">
   <div
-    class="grid grid-cols-8 bg-background-gray rounded-lg items-center font-neo-sans-arabic text-[13px] font-normal p-3 mb-2 text-gray-dark"
+    class="py-3.5 grid grid-cols-8 bg-background-gray rounded-lg items-center font-neo-sans-arabic text-[13px] font-normal p-3 mb-2 text-gray-dark gap-x-3"
   >
-    <h4 class="col-span-2">العميل</h4>
-    <h4>تاريخ التعيين</h4>
-    <h4>تاريخ إلغاء التعيين</h4>
-    <h4>المسؤول عن التعيين</h4>
-    <h4>الدقائق المحلية</h4>
-    <h4>الدقائق الدولية</h4>
-    <h4>المبلغ</h4>
-  </div>
-  <div
-    class="h-[300px] w-full overflow-y-scroll custom-scrollbar"
-  >
-  <div
-  *ngFor="let item of data"
-  class="grid grid-cols-8 border border-border2 rounded-lg items-center p-3 mb-2 text-dark text-sm font-normal"
->
-  <h4 title="{{ item.company }}" class="col-span-2 font-neo-sans-arabic">
-    {{ item.company || '-'}}
-  </h4>
-  <h4 class="font-poppins">{{ item.date1 || '-'}}</h4>
-  <h4 class="font-poppins">{{ item.date2 || '-'}}</h4>
-  <h4 class="font-neo-sans-arabic">{{ item.name || '-' }}</h4>
-  <h4 class="font-poppins">{{ item.localMin || '-'}}</h4>
-  <h4 class="font-poppins">{{ item.globalMin || '-'}}</h4>
-  <h4 class="font-poppins">
-    {{ item.amount || '-'}} <span class="font-neo-sans-arabic mr-0.5">ج.م</span>
-  </h4>
-</div>
-
+    <h4 class="col-span-2 truncate">العميل</h4>
+    <h4 class="truncate">تاريخ التعيين</h4>
+    <h4 class="truncate">تاريخ إلغاء التعيين</h4>
+    <h4 class="truncate">المسؤول عن التعيين</h4>
+    <h4 class="truncate">الدقائق المحلية</h4>
+    <h4 class="truncate">الدقائق الدولية</h4>
+    <h4 class="">المبلغ</h4>
   </div>
 
-  <div class="mt-3">s</div>
+  <div class="h-[230px] w-full overflow-y-scroll custom-scrollbar">
+    <div
+      *ngFor="let item of paginatedData"
+      class="py-3.5 grid grid-cols-8 border border-border2 rounded-lg items-center p-3 mb-2 text-dark text-sm font-normal gap-x-3"
+    >
+      <h4
+        title="{{ item.company }}"
+        class="col-span-2 font-neo-sans-arabic truncate"
+      >
+        {{ item.company || "-" }}
+      </h4>
+      <h4 title="{{ item.date1 }}" class="font-poppins truncate">
+        {{ item.date1 || "-" }}
+      </h4>
+      <h4 title="{{ item.date2 }}" class="font-poppins truncate">
+        {{ item.date2 || "-" }}
+      </h4>
+      <h4 title="{{ item.name }}" class="font-neo-sans-arabic truncate">
+        {{ item.name || "-" }}
+      </h4>
+      <h4 title="{{ item.localMin }}" class="font-poppins truncate">
+        {{ item.localMin || "-" }}
+      </h4>
+      <h4 title="{{ item.globalMin }}" class="font-poppins truncate">
+        {{ item.globalMin || "-" }}
+      </h4>
+      <h4 title="{{ item.amount }}" class="font-poppins truncate">
+        {{ item.amount || "-" }}
+        <span class="font-neo-sans-arabic mr-0.5">ج.م</span>
+      </h4>
+    </div>
+  </div>
+
+  <div class="mt-3 flex flex-col sm:flex-row justify-between items-center mx-3 pb-3">
+
+    <div class="mb-3 sm:mb-0 flex justify-center items-center text-black">
+      <h4 class="font-neo-sans-arabic font-normal ml-2">عرض</h4>
+      <select
+        class="focus:outline-none pl-1  py-1.5 border border-border1 rounded-[2px]"
+        dir="ltr"
+        id="options"
+        (change)="setItemsPerPage($event)"
+      >
+        <option [value]="5" [selected]="itemsPerPage === 5">5</option>
+        <option [value]="10" [selected]="itemsPerPage === 10">10</option>
+        <option [value]="15" [selected]="itemsPerPage === 15">15</option>
+      </select>
+      <h4 class="font-neo-sans-arabic font-normal mx-2">من أصل</h4>
+      <h4 class="font-poppins font-normal">55</h4>
+    </div>
+
+    <div dir="ltr" class="flex justify-center items-center">
+      <img
+        [src]="arrowIcon"
+        alt=""
+        (click)="prevPage()"
+        [class.opacity-50]="currentPage === 1"
+        class="cursor-pointer scale-x-[-1]"
+      />
+      <div class="mx-3 flex justify-center items-center">
+        <ng-container
+          *ngFor="let page of [].constructor(totalPages); let i = index"
+        >
+          <h3
+            (click)="goToPage(i + 1)"
+            [class.font-bold]="currentPage === i + 1"
+            [class.bg-primary]="currentPage === i + 1"
+            [class.text-white]="currentPage === i + 1"
+            class="cursor-pointer mx-1 px-2.5 py-1 text-[#7E8299] font-medium font-poppins text-sm rounded-lg"
+          >
+            {{ i + 1 }}
+          </h3>
+        </ng-container>
+      </div>
+      <img
+        [src]="arrowIcon"
+        alt=""
+        (click)="nextPage()"
+        [class.opacity-50]="currentPage === totalPages"
+        class="cursor-pointer"
+      />
+    </div>
+
+  </div>
 </div>

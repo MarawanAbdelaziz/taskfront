@@ -3,27 +3,52 @@
     <div class="flex justify-center items-center">
       <h4 class="font-poppins font-semibold">012345678910</h4>
       <h4
-        class="font-neo-sans-arabic font-medium py-1 px-4 bg-secondary rounded-sm text-white mr-3"
+        class="font-neo-sans-arabic font-medium py-1 text-sm px-4 bg-secondary rounded-sm text-white mr-3"
       >
         قيد الإستخدام
       </h4>
     </div>
-    <div class="group cursor-pointer">
-      <img
-        class="group-hover:hidden w-8.5 h-8"
-        [src]="dotsIconG"
-        alt="Close Icon"
-      />
-      <img
-        class="hidden group-hover:block w-8.5 h-8"
-        [src]="dotsIconB"
-        alt="Close Icon"
-      />
+    <div class="relative">
+      <div
+        class="group cursor-pointer"
+        onclick="document.getElementById('menuOptions').classList.toggle('hidden');"
+      >
+        <img
+          class="group-hover:hidden w-8.5 h-8"
+          [src]="dotsIconG"
+          alt="Close Icon"
+        />
+        <img
+          class="hidden group-hover:block w-8.5 h-8"
+          [src]="dotsIconB"
+          alt="Close Icon"
+        />
+      </div>
+
+      <div
+        id="menuOptions"
+        class="hidden absolute left-0 mt-2 text-nowrap bg-white border border-gray-300 rounded-lg shadow-lg"
+      >
+        <div class="flex justify-center items-center px-7 pb-2 pt-4">
+          <img [src]="editIcon" alt="" />
+          <h4 class="font-neo-sans-arabic font-normal text-sm text-dark mr-2">
+            تعديل الرقم
+          </h4>
+        </div>
+        <div class="flex justify-center items-center px-8 pb-4 pt-2">
+          <img [src]="cancelIcon" alt="" />
+          <h4 class="font-neo-sans-arabic font-normal text-sm text-danger mr-2">
+            إلغاء التعيين
+          </h4>
+        </div>
+      </div>
     </div>
   </div>
 
   <div class="p-3 flex flex-col">
-    <div class="grid grid-cols-4 divide-x divide-line">
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-2 divide-x divide-transparent sm:divide-line"
+    >
       <app-titles title="اسم البروتوكول" des="فودافون مصر"></app-titles>
       <app-titles
         title="الدولة"
@@ -37,11 +62,32 @@
       ></app-titles>
       <app-titles title="عدد الإمتدادات" des="09" [number]="true"></app-titles>
     </div>
-    <div class="grid grid-cols-4 divide-x divide-line mt-4">
-      <app-titles title="تاريخ آخر شحنة" des="2024/12/29" [number]="true"></app-titles>
-      <app-titles title="الرصيد الحالي" des="5000" [number]="true" [price]="true"></app-titles>
-      <app-titles title="الرصيد المستخدم للعميل الحالي" des="5000" [number]="true" [price]="true"></app-titles>
-      <app-titles title="الرصيد المستخدم للرقم ككل" des="5000" [number]="true" [price]="true"></app-titles>
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-2 divide-x divide-transparent sm:divide-line mt-4"
+    >
+      <app-titles
+        title="تاريخ آخر شحنة"
+        des="2024/12/29"
+        [number]="true"
+      ></app-titles>
+      <app-titles
+        title="الرصيد الحالي"
+        des="5000"
+        [number]="true"
+        [price]="true"
+      ></app-titles>
+      <app-titles
+        title="الرصيد المستخدم للعميل الحالي"
+        des="5000"
+        [number]="true"
+        [price]="true"
+      ></app-titles>
+      <app-titles
+        title="الرصيد المستخدم للرقم ككل"
+        des="5000"
+        [number]="true"
+        [price]="true"
+      ></app-titles>
     </div>
   </div>
 </div>
